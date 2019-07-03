@@ -40,4 +40,16 @@ import org.junit.Test;
             double actual = grades.average(arr,5);
             assertEquals(expected,actual,0);
         }
+
+        @Test(expected = ArithmeticException.class)
+        public void testArrayLengthZeroReturnException(){
+            double actual=grades.average(arr,0);
+        }
+
+        @Test
+        public void testgivenarrayNotRetuenWrong(){
+            double actual=grades.average(arr,5);
+            assertNotEquals(71,actual);
+
+        }
     }

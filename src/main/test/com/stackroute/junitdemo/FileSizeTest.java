@@ -19,6 +19,7 @@ public class FileSizeTest {
 
     @Test
     public void shouldReturnFileSize(){
+
         fileSize.displayFile();
     }
 

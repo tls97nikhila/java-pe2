@@ -1,22 +1,45 @@
 package com.stackroute.junitdemo;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class PalCheckTest {
+    PalCheck palCheck;
+    @Before
+    public void setUp(){
+        palCheck =new PalCheck();
+    }
+    @After
+    public void tearDown(){
+        palCheck=null;
+    }
     @Test
     public  void givenPalStringShouldReturnTrue(){
-        PalCheck palCheck=new PalCheck();
         boolean result= palCheck.isPalindrome("madam");
         assertEquals(true,result);
 
     }
     @Test
     public  void givenNonPalStringShouldReturnFalse(){
-        PalCheck palCheck=new PalCheck();
-        boolean result= palCheck.isPalindrome("Never");
-        assertEquals(false,result);
+        boolean result= palCheck.isPalindrome("shoot");
+        assertNotEquals(true,result);
+
+    }
+
+    @Test (expected = NullPointerException.class)
+    public  void givenNullShouldReturnNUll(){
+
+        boolean result= palCheck.isPalindrome(null);
+
+    }
+
+    @Test
+    public  void givenNumPalShouldReturnTrue(){
+        boolean result= palCheck.isPalindrome("55655");
+        assertEquals(true,result);
 
     }
 }

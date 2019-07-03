@@ -2,7 +2,7 @@ package com.stackroute.junitdemo;
 
 public class CheckPower4 {
     public static boolean isPower4(long input){
-            if(input == 0)
+            if(input <=0)
                 return false;
             while(input != 1)
             {
